@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CEP Autocomplete For Brazillian Correios</title>
+    <style>
+        fieldset { max-width: 300px; }
+        input,select { float: right; width: 160px; }
+        label { line-height: 30px; display: block; }
+    </style>
+</head>
+<body>
+    <t1>CEP Autocomplete For Brazillian Correios</t1>
+    <br />
+    <br />
+    <fieldset id="first-case">
+        <legend>Data-Defined Options</legend>
+        <label>CEP:
+            <input name="cep"
+            data-address="#first-case [name=address]"
+            data-neighborhood="#first-case [name=neighborhood]"
+            data-city="#first-case [name=city]"
+            data-state="#first-case [name=state]"/>
+        </label>
+        <label>Address: <input name="address" /></label>
+        <label>Neighborhood: <input name="neighborhood" /></label>
+        <label>City: <input name="city" /></label>
+        <label>State: <input name="state" /></label>
+    </fieldset>
+    <br />
+    <fieldset id="second-case">
+        <legend>Data-Defined Options With Selects</legend>
+        <label>CEP:
+            <input name="cep"
+            data-address="#second-case [name=address]"
+            data-neighborhood="#second-case [name=neighborhood]"
+            data-city="#second-case [name=city]"
+            data-state="#second-case [name=state]"/>
+        </label>
+        <label>Address: <input name="address" /></label>
+        <label>Neighborhood: <input name="neighborhood" /></label>
+        <label>City: <input name="city" /></label>
+        <label>State:
+            <select name="state"> 
+                <option>Select a state</option> 
+                <option value="AC">Acre</option> 
+                <option value="AL">Alagoas</option> 
+                <option value="AM">Amazonas</option> 
+                <option value="AP">Amapá</option> 
+                <option value="BA">Bahia</option> 
+                <option value="CE">Ceará</option> 
+                <option value="DF">Distrito Federal</option> 
+                <option value="ES">Espírito Santo</option> 
+                <option value="GO">Goiás</option> 
+                <option value="MA">Maranhão</option> 
+                <option value="MT">Mato Grosso</option> 
+                <option value="MS">Mato Grosso do Sul</option> 
+                <option value="MG">Minas Gerais</option> 
+                <option value="PA">Pará</option> 
+                <option value="PB">Paraíba</option> 
+                <option value="PR">Paraná</option> 
+                <option value="PE">Pernambuco</option> 
+                <option value="PI">Piauí</option> 
+                <option value="RJ">Rio de Janeiro</option> 
+                <option value="RN">Rio Grande do Norte</option> 
+                <option value="RO">Rondônia</option> 
+                <option value="RS">Rio Grande do Sul</option> 
+                <option value="RR">Roraima</option> 
+                <option value="SC">Santa Catarina</option> 
+                <option value="SE">Sergipe</option> 
+                <option value="SP">São Paulo</option> 
+                <option value="TO">Tocantins</option> 
+            </select>
+        </label>
+    </fieldset>
+    <br />
+    <fieldset id="with-options">
+        <legend>Data-Defined Options</legend>
+        <label>CEP: <input name="cep" /> </label>
+        <label>Address: <input name="address" /></label>
+        <label>Neighborhood: <input name="neighborhood" /></label>
+        <label>City: <input name="city" /></label>
+        <label>State: <input name="state" /></label>
+    </fieldset>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script src="jquery-cep-autocomplete.js"></script>
+    <script>
+        $('#first-case [name=cep], #second-case [name=cep]')
+            .cepAutocomplete();
+        $('#with-options [name=cep]').cepAutocomplete({
+            address: "#with-options [name=address]",
+            neighborhood: "#with-options [name=neighborhood]",
+            city: "#with-options [name=city]",
+            state: "#with-options [name=state]"
+        });
+    </script>
+</body>
+</html>
