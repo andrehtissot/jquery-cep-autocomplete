@@ -23,7 +23,7 @@
     var options = options || {};
     $(this).on('focusout.cepAutocomplete', function(){
       var $this = $(this);
-      var cep = $this.val().replace('-', '').replace('.', '');
+      var cep = $this.val().replace('-', '').replace('.', '').trim();
       if(cep.length != 8) { return; }
       var $fields = {};
       for (var i = fieldNames.length - 1; i >= 0; i--) {
