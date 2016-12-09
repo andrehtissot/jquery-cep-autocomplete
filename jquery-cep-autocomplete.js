@@ -1,5 +1,5 @@
 /*!
- * CepAutocomplete Jquery Plugin v1.0
+ * CepAutocomplete Jquery Plugin v1.1
  * https://github.com/andrehtissot/jquery-cep-autocomplete
  *
  * Requires jQuery Library
@@ -10,7 +10,7 @@
  * Copyright André Augusto Tissot
  * Released under the MIT license
  *
- * Date: 2016-12-04
+ * Date: 2016-12-09
  */
 (function($) {
   var fieldNames = ['address','neighborhood','city','state'];
